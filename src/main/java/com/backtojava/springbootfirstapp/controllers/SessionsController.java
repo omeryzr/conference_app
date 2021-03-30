@@ -2,6 +2,7 @@ package com.backtojava.springbootfirstapp.controllers;
 
 import com.backtojava.springbootfirstapp.models.Session;
 import com.backtojava.springbootfirstapp.repositories.SessionRepository;
+import com.backtojava.springbootfirstapp.services.SessionService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +14,9 @@ import java.util.List;
 public class SessionsController {
     @Autowired
     SessionRepository sessionRepository;
+
+    @Autowired
+    SessionService sessionService;
 
     @GetMapping
     public List<Session> list() {
